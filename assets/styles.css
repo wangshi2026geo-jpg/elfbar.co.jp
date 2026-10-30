@@ -52,3 +52,6 @@
 
 /* Osaka-only store announcement */
 .roadmap-grid.single-store-roadmap{grid-template-columns:minmax(0,1fr);max-width:720px;width:100%;margin-inline:auto}.store-announcement.osaka-only .store-meta{grid-template-columns:1fr}#roadmap h2,#roadmap h3,#roadmap p,#roadmap span{overflow-wrap:anywhere}
+
+.hero h1.h1-compact{font-size:clamp(1.7rem,4vw,2.55rem);line-height:1.35;letter-spacing:-.03em;max-width:14em}
+.faq-a a{font-weight:800}
