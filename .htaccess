@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^news\.html$ /news/ [R=301,L]
+</IfModule>
