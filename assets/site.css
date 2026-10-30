@@ -504,3 +504,17 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+.detail-copy h1.h1-compact,
+.page-hero h1.h1-compact {
+  max-width: 16em;
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 860px) {
+  .detail-copy h1.h1-compact,
+  .page-hero h1.h1-compact { font-size: clamp(1.2rem, 4.8vw, 1.6rem); }
+}
+.related-links { display: grid; gap: 12px; margin-top: 8px; }
+.related-links .text-link { width: fit-content; }
