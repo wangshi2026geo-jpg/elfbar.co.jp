@@ -1,4 +1,44 @@
+# Onamae（Apache / mod_rewrite）向け。
+# 最終的な正規URLは https://www.elfbar.co.jp/… （パスとクエリを維持）。
+#
+# 1. /products/ と /products/index.html だけを /products.html へ 301。
+#    /products/ice-king.html など配下の製品ページは対象外。
+# 2. 非 www（elfbar.co.jp）を https://www.elfbar.co.jp へ 301。
+# 3. www の HTTP を https://www.elfbar.co.jp へ 301。
+#    HTTPS 判定は %{HTTPS} / ポート443 / X-Forwarded-Proto のいずれかが
+#    https ならリダイレクトしない（ループ防止）。
+#
+# アップロード後も http://elfbar.co.jp/ や http://www.elfbar.co.jp/ が 500 のままなら、
+# .htaccess だけでは直りません。お名前.comのパネルで独自SSLを有効にし、
+# 必要ならパネル側の「常時SSL / HTTP→HTTPS」もオンにしてください。
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^news\.html$ /news/ [R=301,L]
+RewriteBase /
+
+# ディレクトリ一覧の重複だけを正規URLへ。製品詳細は残す。
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteRule ^products/index\.html$ https://www.elfbar.co.jp/products.html [R=301,L]
+
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteRule ^products/?$ https://www.elfbar.co.jp/products.html [R=301,L]
+
+# 既存: news.html も www + HTTPS へ一回で揃える。
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteRule ^news\.html$ https://www.elfbar.co.jp/news/ [R=301,L]
+
+# 非 www → https://www（HTTP でも HTTPS でも一回で正規ホストへ）。
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteCond %{HTTP_HOST} ^elfbar\.co\.jp(?::\d+)?$ [NC]
+RewriteRule ^ https://www.elfbar.co.jp%{REQUEST_URI} [R=301,L]
+
+# www の平文 HTTP → HTTPS。
+# %{HTTPS} が未設定のままのプロキシではリダイレクトしない（https://www のループを避ける）。
+# 明示的に off、または X-Forwarded-Proto が http のときだけ上げる。
+# すでに https と分かっている要求は除外する。
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteCond %{HTTP_HOST} ^www\.elfbar\.co\.jp(?::\d+)?$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://www.elfbar.co.jp%{REQUEST_URI} [R=301,L]
 </IfModule>
