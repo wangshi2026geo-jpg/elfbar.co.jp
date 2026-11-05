@@ -55,3 +55,5 @@
 
 .hero h1.h1-compact{font-size:clamp(1.7rem,4vw,2.55rem);line-height:1.35;letter-spacing:-.03em;max-width:14em}
 .faq-a a{font-weight:800}
+a.jasmine-thumb{display:block;color:inherit;text-decoration:none}
+a.jasmine-thumb:hover{border-color:#c9b6ff}
