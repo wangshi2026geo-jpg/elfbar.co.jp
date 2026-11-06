@@ -201,6 +201,8 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; }
 .product-visual { position: relative; height: 315px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 50%, #fff 0 20%, rgba(224,244,255,.9) 55%, transparent 78%); }
 .product-card:nth-child(2) .product-visual { background: radial-gradient(circle, #fff, #e2f4ff 65%, #dfeeff); }
 .product-card:nth-child(3) .product-visual { background: radial-gradient(circle, #fff 5%, #e9ebef 62%, #d9dde4); }
+.product-card[data-product="ice-king"] .product-visual,
+.product-card[data-product="duke"] .product-visual { background: linear-gradient(160deg, #fafbfc, #f3f4f6); }
 .product-visual::after { content: ""; position: absolute; right: 24px; bottom: 18px; left: 24px; height: 26px; background: radial-gradient(ellipse, rgba(26,33,48,.18), transparent 68%); filter: blur(8px); }
 .product-visual img { position: relative; z-index: 1; width: auto; height: 260px; object-fit: contain; filter: drop-shadow(0 24px 19px rgba(20,31,50,.18)); transition: transform .35s ease; }
 .product-card:hover .product-visual img { transform: translateY(-7px) scale(1.025); }
@@ -280,8 +282,10 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; }
 .breadcrumb span + span::before { content: "/"; margin-right: 7px; color: #a9afb8; }
 
 .product-detail-hero { overflow: hidden; padding: 74px 0 90px; background: linear-gradient(145deg, #fff 15%, #ecf8ff); }
+.product-detail-hero:not(.pdp-hero) { background: linear-gradient(160deg, #fafbfc 0%, #f4f5f7 100%); }
 .product-detail-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 62px; align-items: center; }
 .detail-art { position: relative; min-height: 570px; display: grid; place-items: center; background: radial-gradient(circle, #fff, #e5f5ff 62%, #dceeff); border: 1px solid rgba(48,82,109,.09); border-radius: 40px; }
+.product-detail-hero:not(.pdp-hero) .detail-art { background: linear-gradient(160deg, #fafbfc, #f3f4f6); border-color: rgba(20,24,34,.06); }
 .detail-art::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: 42px; height: 28px; background: radial-gradient(ellipse, rgba(28,42,64,.22), transparent 68%); filter: blur(9px); }
 .detail-art img { position: relative; z-index: 1; width: auto; height: 480px; object-fit: contain; filter: drop-shadow(0 34px 24px rgba(28,41,64,.18)); }
 .detail-copy h1 { font-size: clamp(3rem, 6vw, 5.4rem); }
@@ -581,12 +585,10 @@ a.flavor-card:hover img { transform: translateY(-10px) scale(1.04); }
 body.pdp { background: #f6fafc; }
 body.pdp.jasmine { background: #f7faf4; }
 .product-detail-hero.pdp-hero.jasmine {
-  background:
-    radial-gradient(820px 480px at 78% 36%, rgba(190, 214, 150, .7), transparent 68%),
-    linear-gradient(180deg, #f3f8ec 0%, #f8fbf5 62%, #f7faf4 100%);
+  background: linear-gradient(160deg, #fafbfc 0%, #f4f5f7 100%);
 }
 .pdp-hero.jasmine .pdp-hero-art::before {
-  background: radial-gradient(circle, rgba(255,255,255,.96), rgba(198, 220, 156, .5) 56%, transparent 72%);
+  background: radial-gradient(circle, rgba(255,255,255,.98), rgba(230, 232, 236, .55) 56%, transparent 72%);
 }
 .jasmine .usp-item svg { color: #3d7a45; background: linear-gradient(180deg, #f8fbf4, #e6f2dc); }
 .product-detail-hero.pdp-hero {
