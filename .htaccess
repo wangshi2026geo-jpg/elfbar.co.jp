@@ -26,6 +26,12 @@ RewriteRule ^products/?$ https://www.elfbar.co.jp/products.html [R=301,L]
 RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
 RewriteRule ^news\.html$ https://www.elfbar.co.jp/news/ [R=301,L]
 
+# Retired: 信頼情報ページ。旧URLはホームへ。
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteRule ^trust\.html$ https://www.elfbar.co.jp/ [R=301,L]
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+RewriteRule ^trust/?$ https://www.elfbar.co.jp/ [R=301,L]
+
 # 非 www → https://www（HTTP でも HTTPS でも一回で正規ホストへ）。
 RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
 RewriteCond %{HTTP_HOST} ^elfbar\.co\.jp(?::\d+)?$ [NC]
