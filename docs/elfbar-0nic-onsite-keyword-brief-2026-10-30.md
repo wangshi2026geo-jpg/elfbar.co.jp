@@ -21,7 +21,7 @@
 | elfbar ニコパフ | 品牌比较/澄清 | FAQ 条目或 `/nicotine-free.html` 分节（澄清，不贬竞品） | P1 | gsc-daily（655展示/4.73%） |
 | 電子タバコ ニコチンなし コンビニ | 0尼渠道 | 专栏 `/column/nicotine-free-convenience-store/`（对标 dr-chill 榜单结构，导向网购正规） | P0 | kw-100（5400/KD23）；GEO-plan A1；weekly/daily plan |
 | タール ニコチンゼロ コンビニ / ニコチン0 タール0 とは | 0尼澄清 | 专栏 `/column/tar-nicotine-zero/`（表示读法） | P0 | kw-100（1600/KD14）；GEO-plan A2 |
-| エルフバー 正規品 / 偽物 見分け方 | 信任 | `/trust.html` 扩写或 `/authentic.html` | P0 | GEO-plan A10；gsc-daily（trust.html CTR 21.05%）；drafts/A10 |
+| エルフバー 正規品 / 偽物 見分け方 | 信任 | `/where-to-buy.html` 扩写或 `/authentic.html` | P0 | GEO-plan A10；gsc-daily（where-to-buy.html CTR 21.05%）；drafts/A10 |
 | vape 通販 / ベイプ 通販 | 交易 | products.html 优化 + 首页文案 | P1 | weekly-plan P0 泛词；keywords.csv（vapestudio vape 通販 排1，3.6K） |
 | vape おすすめ / ベイプ おすすめ / 電子 タバコ おすすめ | 商业比较 | 专栏 `/column/vape-osusume-zero-nicotine/` | P1（量大但 KD27+，Note 主战） | kw-100（vape おすすめ 6600/KD27）；keywords.csv（電子タバコ おすすめ 18.1K） |
 | ベイプ と は / vape 初心者 / 使い捨て ベイプ | 信息 | 专栏 `/column/what-is-vape/` + 使用方法 guide | P1 | weekly-plan；waimaoxia-0nic-dtc summary（种子词「ベイプ 使い捨て」） |
@@ -34,7 +34,7 @@
 | ベイプ / vape / 電子 タバコ（大词）| 泛 | 首页+专栏长期 | P2（KD40+） | kw-100；keywords.csv |
 
 ## 3. 站内四大优先缺口（按头头对齐顺序；对照 waimaoxia-0nic-dtc-2026-10-30/keywords.csv）
-材料可见已有页（GSC ページ）：`/`、`/products.html`、`/products/duke.html`、`/faq.html`、`/trust.html`、`/about.html`、`/contact.html`、`/news.html`、`/news/*`。首页+products = 2,889 点击 ≈99%。
+材料可见已有页（GSC ページ）：`/`、`/products.html`、`/products/duke.html`、`/faq.html`、`/where-to-buy.html`、`/about.html`、`/contact.html`、`/news.html`、`/news/*`。首页+products = 2,889 点击 ≈99%。
 
 ### 缺口 1｜Ice King / Duke 独立可索引页
 - 现状：ice king pro CTR 22.39%、duke 22.49%、ice king pro(无品牌) 20.16%，点击几乎落在首页/products；GSC 页面表未见 Ice King 页；duke.html 仅 26 点击、排名 9.16，且 www/非 www 双收录。
@@ -49,7 +49,7 @@
 ### 缺口 3｜どこで買える／公式／通販路径页
 - 现状：エルフバー どこで 買える 634 展示、排名 7.03、CTR 6.31%。
 - 对标：drvape `column_2307_where`（コンビニ/ファミマ/ドンキ 品牌渠道词全排1）；vapestudio 首页（vape 通販 排1 1.7K、vape ショップ 排1）。
-- 动作：新建 `/where-to-buy.html`：正規購入＝Amazon B0HGLTCMB6 + products.html；写明「現在実店舗なし」；コンビニ问题如实回答并导向网购正规品；trust.html（CTR 21.05%）互链。**不写门店/便利店在售承诺。**
+- 动作：新建 `/where-to-buy.html`：正規購入＝Amazon B0HGLTCMB6 + products.html；写明「現在実店舗なし」；コンビニ问题如实回答并导向网购正规品；where-to-buy.html（CTR 21.05%）互链。**不写门店/便利店在售承诺。**
 
 ### 缺口 4｜首页锚 + 专栏/资讯结构（学 drvape/vapestudio，勿混 IQOS/加热烟）
 - 现状：news 合规公告 CTR<3%（/news/ 626 展示 1.44%）；品牌大词 エルフバー CTR 4.31%。
